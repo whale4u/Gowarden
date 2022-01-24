@@ -1,7 +1,7 @@
 package v1
 
 import (
-	"Gowarden/dto"
+	"Gowarden/entity"
 	"Gowarden/utils"
 	"fmt"
 	"github.com/gin-gonic/gin"
@@ -9,10 +9,10 @@ import (
 )
 
 func Login(ctx *gin.Context) {
-	var loginDto dto.LoginDto
+	var loginDto entity.LoginDto
 	if err := ctx.ShouldBindJSON(&loginDto); err != nil {
-		fmt.Println("orm verify failed!")
-		fmt.Println(loginDto)
+		fmt.Println("Orm verify failed!")
+		//fmt.Println(loginDto)
 		return
 	}
 	if loginDto.UserName == "admin" && loginDto.Password == "pass" {
