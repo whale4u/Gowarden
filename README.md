@@ -24,7 +24,6 @@ curl --location --request POST 'http://127.0.0.1:8090/login' \
 
 `curl --location --request POST 'http://127.0.0.1:8090/register'  --header 'Content-Type: application/json'  --data-raw '{"username":"admin", "password":"pass", "phone":"181232725678"}'`
 
-
 ## 主页接口
 
 ```http request
