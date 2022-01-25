@@ -6,6 +6,7 @@
 
 ## 实现功能
 
+* [ ]  全局错误统一处理
 * [ ]  casbin
 * [X]  gorm
 * [X]  jwt生成token

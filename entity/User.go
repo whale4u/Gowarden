@@ -14,10 +14,18 @@ type User struct {
 
 var users []User
 
-func (user User) Add() (result string, err error) {
+func (user *User) Create() (result string, err error) {
 	res := orm.DB.Create(&user)
 	if res.Error != nil {
 		err = res.Error
 	}
+	return
+}
+
+func (user *User) Delete() (Result User, err error) {
+	if err = orm.DB.Where("user_name = ?", user.UserName).Delete(&user).Error; err != nil {
+		return
+	}
+	Result = *user
 	return
 }
